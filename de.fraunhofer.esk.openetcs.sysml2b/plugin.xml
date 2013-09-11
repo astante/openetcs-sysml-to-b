@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.popupMenus">
+      <objectContribution
+            id="de.fraunhofer.esk.openetcs.sysml2b.contribution1"
+            objectClass="org.eclipse.core.resources.IFile">
+         <menu
+               id="de.fraunhofer.esk.openetcs.sysml2b.menu1"
+               label="openETCS"
+               path="additions">
+            <separator
+                  name="group1">
+            </separator>
+         </menu>
+         <action
+               class="de.fraunhofer.esk.openetcs.sysml2b.popup.actions.GenerateAction"
+               enablesFor="1"
+               id="de.fraunhofer.esk.openetcs.sysml2b.generate"
+               label="Generate Classical B Model"
+               menubarPath="de.fraunhofer.esk.openetcs.sysml2b.menu1/group1"
+               style="push">
+         </action>
+      </objectContribution>
+   </extension>
+
+</plugin>
