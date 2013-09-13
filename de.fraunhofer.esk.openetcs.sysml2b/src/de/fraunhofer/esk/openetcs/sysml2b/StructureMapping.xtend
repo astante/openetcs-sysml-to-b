@@ -52,7 +52,7 @@ class StructureMapping {
 			«ENDFOR»
 		THEN
 			skip
-		END
+		END;
 		
 		«ELSE» 
 		BEGIN
