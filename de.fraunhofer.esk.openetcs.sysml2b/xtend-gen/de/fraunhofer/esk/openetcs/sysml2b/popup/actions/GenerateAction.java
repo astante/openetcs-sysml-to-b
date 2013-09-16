@@ -9,7 +9,7 @@ import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
 import org.eclipse.core.runtime.jobs.Job;
 import org.eclipse.jface.action.IAction;
-import org.eclipse.jface.dialogs.MessageDialog;
+// import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.widgets.Shell;
@@ -20,6 +20,7 @@ import de.fraunhofer.esk.openetcs.sysml2b.FileGenerator;
 
 public class GenerateAction implements IObjectActionDelegate {
 
+	@SuppressWarnings("unused")
 	private Shell shell;
 	private ISelection selection;
 	

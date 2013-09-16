@@ -1,8 +1,6 @@
 package de.fraunhofer.esk.openetcs.sysml2b
 
 import org.eclipse.uml2.uml.StateMachine
-import org.eclipse.uml2.uml.State
-import org.eclipse.uml2.uml.Transition
 import org.eclipse.uml2.uml.Region
 import org.eclipse.emf.common.util.EList
 

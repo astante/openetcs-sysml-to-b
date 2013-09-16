@@ -14,9 +14,8 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.sysml.blocks.Block;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
-import org.eclipse.uml2.uml.PackageableElement;
 import org.eclipse.uml2.uml.Stereotype;
-import org.eclipse.uml2.uml.util.UMLUtil;
+// import org.eclipse.uml2.uml.util.UMLUtil;
 import de.fraunhofer.esk.openetcs.sysml2b.StructureMapping;
 
 public class FileGenerator {
