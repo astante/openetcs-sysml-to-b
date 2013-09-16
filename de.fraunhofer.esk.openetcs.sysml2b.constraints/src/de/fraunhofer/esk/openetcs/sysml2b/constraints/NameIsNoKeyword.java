@@ -83,7 +83,8 @@ public class NameIsNoKeyword extends AbstractModelConstraint {
 		NamedElement element = (NamedElement) ctx.getTarget();
 		
 		for (String keyword : keywords) {
-			if (element.getName().equals(keyword)) {
+			String name = element.getName();
+			if (name != null && name.equals(keyword)) {
 				return ctx.createFailureStatus("The name '" + keyword + "' is a reserved B keyword");
 			}
 		}

@@ -11,7 +11,7 @@ public class NameIsValid extends AbstractModelConstraint {
 		NamedElement element = (NamedElement) ctx.getTarget();
 		String name = element.getName();
 		
-		if (name.matches("[a-zA-Z][a-zA-Z0-9_]*")) {
+		if (name != null && name.matches("[a-zA-Z][a-zA-Z0-9_]*")) {
 			return ctx.createSuccessStatus();
 		} else {
 			return ctx.createFailureStatus("The name '" + name + "' contains invalid characters");
