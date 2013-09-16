@@ -8,6 +8,7 @@ import org.eclipse.emf.common.util.EList
 import org.eclipse.uml2.uml.Operation
 import org.eclipse.uml2.uml.Parameter
 import org.eclipse.uml2.uml.ParameterDirectionKind
+import org.eclipse.uml2.uml.InstanceValue
 
 class StructureMapping {
 	def createMachine(Block block)'''
@@ -39,6 +40,9 @@ class StructureMapping {
 	«IF block.hasInitialization»
 	
 	INITIALIZATION
+		«FOR variable : block.base_Class.getValues»
+		«variable.name» := «(variable.defaultValue as InstanceValue).instance.name»
+		«ENDFOR»
 	«ENDIF»
 	«IF block.hasOperations»
 	
@@ -102,6 +106,12 @@ class StructureMapping {
 	
 	def boolean hasInitialization(Block block)
 	{
+		for (org.eclipse.uml2.uml.Property p : block.base_Class.ownedAttributes) {
+			if (p.defaultValue != null) {
+				return true;
+			}
+		}
+		
 		return false;
 	}
 	
