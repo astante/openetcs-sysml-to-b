@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.papyrus.sysml.blocks.Block;
+import org.eclipse.uml2.uml.Element;
 import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
@@ -36,15 +37,9 @@ public class FileGenerator {
 
 	public void generateAndWrite() {
 
-		for (NamedElement element: sysmlModel.getOwnedMembers()) {
+		for (Element element: sysmlModel.allOwnedElements()) {
 			Stereotype stereotype;
-			System.out.println(element.getName());
-			for (Stereotype st : element.getAppliedStereotypes())
-			{
-				System.out.println(st.getName());
-			}
-			System.out.println("-------------");
-			
+
 			if ((stereotype = element.getAppliedStereotype("SysML::Blocks::Block")) != null) {
 				createMachineFile((Block) element.getStereotypeApplication(stereotype));
 			}
