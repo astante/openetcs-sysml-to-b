@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Sysml2b
+Bundle-SymbolicName: de.fraunhofer.esk.openetcs.sysml2b;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: de.fraunhofer.esk.openetcs.sysml2b.Activator
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.xtend.lib,
+ com.google.guava,
+ org.eclipse.xtext.xbase.lib,
+ org.eclipse.uml2.uml;bundle-version="4.0.2",
+ org.eclipse.papyrus.sysml;bundle-version="0.9.2",
+ org.eclipse.core.resources
+Bundle-ActivationPolicy: lazy
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+
