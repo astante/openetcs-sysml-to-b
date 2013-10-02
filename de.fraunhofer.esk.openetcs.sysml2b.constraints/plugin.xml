@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.validation.constraintProviders">
+      <category
+            id="de.fraunhofer.esk.openetcs.sysml2b.constraints.SysMLToB"
+            name="SysML to B Transformation Constraints">
+      </category>
+      <constraintProvider
+            mode="Batch">
+         <package
+               namespaceUri="http://www.eclipse.org/uml2/4.0.0/UML">
+         </package>
+         <constraints
+               categories="de.fraunhofer.esk.openetcs.sysml2b.constraints.SysMLToB">
+            <constraint
+                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
+                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="UML NamedElements do not use reserved Classical B keywords."
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0}
+               </message>
+               <description>
+                  description body text
+               </description>
+               <target
+                     class="NamedElement">
+               </target>
+            </constraint>
+            <constraint
+                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsUnique"
+                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsUnique"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="SysML Block names have to be unique"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0}
+               </message>
+               <target
+                     class="Class">
+               </target>
+            </constraint>
+            <constraint
+                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsValid"
+                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsValid"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="Names must be valid Classical B identifier"
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0}
+               </message>
+               <target
+                     class="NamedElement">
+               </target>
+            </constraint>
+            <constraint
+                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.ParameterHasType"
+                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.ParameterHasType"
+                  isEnabledByDefault="true"
+                  lang="Java"
+                  mode="Batch"
+                  name="All UML Operation parameters have associated types."
+                  severity="ERROR"
+                  statusCode="1">
+               <message>
+                  {0}
+               </message>
+               <description>
+                  All parameter of operation needs a type.
+               </description>
+               <target
+                     class="Parameter">
+               </target>
+            </constraint></constraints>
+      </constraintProvider>
+   </extension>
+
+</plugin>
