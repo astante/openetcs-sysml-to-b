@@ -32,7 +32,7 @@ public class FileGenerator {
 	private Model sysmlModel;
 	
 	public FileGenerator(IFile modelFile, IProject project) {
-		pathToBMchs = project.getLocation().removeLastSegments(1).toOSString() + "/src/";
+		pathToBMchs = project.getLocation().toOSString() + "\\";
 		File file = new File(pathToBMchs);
 		
 		if (!file.exists())	{

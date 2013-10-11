@@ -29,6 +29,7 @@ public class TransformationWizard extends Wizard implements StringConstants {
 	public boolean performFinish() {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(page.getProjectName());
+		IProgressMonitor monitor = new NullProgressMonitor();
 		
 		// Display Message Dialog of project path already exists and create project if not existing
 		if(project.exists())	{
@@ -45,21 +46,28 @@ public class TransformationWizard extends Wizard implements StringConstants {
 			if(dg.open() == 1)
 				return false;
 		} else {
-			IProgressMonitor monitor = new NullProgressMonitor();
+			
 			
 			try {
 				project.create(monitor);
-				project.open(monitor);
 			} catch (CoreException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			monitor.done();
 		}
 		
 		// Generate the Classical B source
 		FileGenerator generator= new FileGenerator(model, project);
 		generator.generateAndWrite();
+		
+		try {
+			project.open(monitor);
+		} catch (CoreException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		monitor.done();		
 		
 		return true;
 	}
