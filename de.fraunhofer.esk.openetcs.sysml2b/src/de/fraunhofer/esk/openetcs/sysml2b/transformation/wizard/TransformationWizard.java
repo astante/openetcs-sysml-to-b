@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b.wizard;
+package de.fraunhofer.esk.openetcs.sysml2b.transformation.wizard;
 
 import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.jface.wizard.Wizard;

@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b;
+package de.fraunhofer.esk.openetcs.sysml2b.transformation;
 
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
@@ -9,7 +9,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import de.fraunhofer.esk.openetcs.sysml2b.wizard.TransformationWizard;
+import de.fraunhofer.esk.openetcs.sysml2b.transformation.wizard.TransformationWizard;
 
 public class StartTransformation implements IObjectActionDelegate {
 

@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b.wizard;
+package de.fraunhofer.esk.openetcs.sysml2b.transformation.wizard;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.resource.ImageDescriptor;
