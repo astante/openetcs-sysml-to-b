@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b
+package de.fraunhofer.esk.openetcs.sysml2b.transformation
 
 import org.eclipse.papyrus.sysml.blocks.Block
 import org.eclipse.uml2.uml.Class

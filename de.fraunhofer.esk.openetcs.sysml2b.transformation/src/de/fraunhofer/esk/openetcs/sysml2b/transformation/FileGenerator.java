@@ -23,7 +23,7 @@ import org.eclipse.uml2.uml.Stereotype;
 
 
 // import org.eclipse.uml2.uml.util.UMLUtil;
-import de.fraunhofer.esk.openetcs.sysml2b.StructureMapping;
+import de.fraunhofer.esk.openetcs.sysml2b.transformation.StructureMapping;
 
 public class FileGenerator {
 	private String pathToBMchs;

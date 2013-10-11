@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b
+package de.fraunhofer.esk.openetcs.sysml2b.transformation
 
 import org.eclipse.uml2.uml.StateMachine
 import org.eclipse.uml2.uml.Region

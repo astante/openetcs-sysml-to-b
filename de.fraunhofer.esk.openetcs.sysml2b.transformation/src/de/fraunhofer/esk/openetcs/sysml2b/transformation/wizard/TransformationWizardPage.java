@@ -28,7 +28,7 @@ public class TransformationWizardPage extends WizardPage {
 		
 		final Label name = new Label(container, SWT.NONE);
 		name.setText("Name of the Project:");
-		name.set
+		//name.set
 		//name.setBounds(50,50,120,27);
 		
 		project = new Text(container, SWT.BOLD | SWT.BORDER);
