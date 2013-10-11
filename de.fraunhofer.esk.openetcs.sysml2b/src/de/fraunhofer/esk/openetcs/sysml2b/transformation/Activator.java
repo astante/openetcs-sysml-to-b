@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b;
+package de.fraunhofer.esk.openetcs.sysml2b.transformation;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;

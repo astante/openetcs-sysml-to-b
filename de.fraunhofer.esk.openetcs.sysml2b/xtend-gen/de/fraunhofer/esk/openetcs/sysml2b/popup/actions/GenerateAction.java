@@ -16,7 +16,7 @@ import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.IObjectActionDelegate;
 import org.eclipse.ui.IWorkbenchPart;
 
-import de.fraunhofer.esk.openetcs.sysml2b.FileGenerator;
+import de.fraunhofer.esk.openetcs.sysml2b.transformation.FileGenerator;
 
 public class GenerateAction implements IObjectActionDelegate {
 
