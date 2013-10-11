@@ -2,8 +2,6 @@ package de.fraunhofer.esk.openetcs.sysml2b.transformation.wizard;
 
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
-import org.eclipse.core.runtime.IStatus;
-import org.eclipse.core.runtime.Status;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
@@ -16,7 +14,7 @@ import org.eclipse.ui.PlatformUI;
 public class TransformationWizardPage extends WizardPage implements StringConstants {
 
 	private Text modelText;
-	private Text projectText;
+	private Text projectName;
 	
 	protected TransformationWizardPage(String pageName) {
 		super(pageName);
@@ -43,11 +41,11 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 		modelText.setLayoutData(gridData);
 		
 		new Label(composite, SWT.NONE).setText(UI_WIZARDPAGE_PROJECTNAME);
-		projectText = new Text(composite, SWT.BOLD | SWT.BORDER);
-		projectText.setLayoutData(gridData);
-		projectText.addListener(SWT.CHANGED, new Listener() {
+		projectName = new Text(composite, SWT.BOLD | SWT.BORDER);
+		projectName.setLayoutData(gridData);
+		projectName.addListener(SWT.CHANGED, new Listener() {
 			public void handleEvent(Event e) {
-				if (!projectText.getText().equals("")) {
+				if (!projectName.getText().equals("")) {
 					setPageComplete(true);
 				} else {
 					setPageComplete(false);
@@ -57,5 +55,8 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 
 		setControl(composite);
 	}
-
+	
+	public String getProjectName() {
+		return projectName.getText();
+	}
 }
