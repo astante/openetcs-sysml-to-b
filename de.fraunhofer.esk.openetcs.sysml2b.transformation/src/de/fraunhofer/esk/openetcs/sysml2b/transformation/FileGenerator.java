@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.HashMap;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IProject;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.emf.ecore.resource.ResourceSet;
@@ -22,6 +23,7 @@ import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 
 
+
 // import org.eclipse.uml2.uml.util.UMLUtil;
 import de.fraunhofer.esk.openetcs.sysml2b.transformation.StructureMapping;
 
@@ -29,8 +31,8 @@ public class FileGenerator {
 	private String pathToBMchs;
 	private Model sysmlModel;
 	
-	public FileGenerator(IFile modelFile) {
-		pathToBMchs = modelFile.getLocation().removeLastSegments(1).toOSString() + "/src/";
+	public FileGenerator(IFile modelFile, IProject project) {
+		pathToBMchs = project.getLocation().removeLastSegments(1).toOSString() + "/src/";
 		File file = new File(pathToBMchs);
 		
 		if (!file.exists())	{

@@ -59,4 +59,12 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 	public String getProjectName() {
 		return projectName.getText();
 	}
+	
+	public void setModelName(String model) {
+		modelText.setText(model);
+	}
+	
+	public String getModelName() {
+		return modelText.getText();
+	}
 }

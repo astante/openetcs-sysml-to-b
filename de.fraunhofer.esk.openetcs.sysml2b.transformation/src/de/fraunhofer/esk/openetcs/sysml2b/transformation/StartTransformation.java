@@ -1,5 +1,6 @@
 package de.fraunhofer.esk.openetcs.sysml2b.transformation;
 
+import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.jface.viewers.IStructuredSelection;
@@ -19,7 +20,11 @@ public class StartTransformation implements IObjectActionDelegate {
 	@Override
 	public void run(IAction action) {
 		if (selection instanceof IStructuredSelection) {
+			IStructuredSelection sel = (IStructuredSelection) selection;
+			IFile file = (IFile) sel.getFirstElement();
 			TransformationWizard wizard = new TransformationWizard();
+			wizard.setModel(file);
+			
 			WizardDialog wizarddialog = new WizardDialog(shell, wizard);
 		
 			try {

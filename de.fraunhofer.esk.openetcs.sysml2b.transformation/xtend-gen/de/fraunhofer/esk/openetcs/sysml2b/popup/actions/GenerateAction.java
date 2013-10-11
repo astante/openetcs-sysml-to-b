@@ -67,8 +67,8 @@ public class GenerateAction implements IObjectActionDelegate {
 			@Override
 			protected IStatus run(IProgressMonitor monitor) {
 
-				FileGenerator generator= new FileGenerator(file);
-				generator.generateAndWrite();
+				//FileGenerator generator= new FileGenerator(file);
+				//generator.generateAndWrite();
 
 				return Status.OK_STATUS;
 			}

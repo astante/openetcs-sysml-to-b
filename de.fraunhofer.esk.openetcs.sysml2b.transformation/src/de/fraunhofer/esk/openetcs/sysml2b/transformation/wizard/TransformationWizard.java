@@ -1,6 +1,7 @@
 package de.fraunhofer.esk.openetcs.sysml2b.transformation.wizard;
 
 import org.eclipse.core.internal.resources.Project;
+import org.eclipse.core.resources.IFile;
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.IWorkspaceRoot;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -16,10 +17,13 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.ui.internal.dialogs.NewWizard;
 
+import de.fraunhofer.esk.openetcs.sysml2b.transformation.FileGenerator;
+
 
 public class TransformationWizard extends Wizard implements StringConstants {
 
 	private TransformationWizardPage page;
+	private IFile model;
 	
 	@Override
 	public boolean performFinish() {
@@ -54,6 +58,8 @@ public class TransformationWizard extends Wizard implements StringConstants {
 		}
 		
 		// Generate the Classical B source
+		FileGenerator generator= new FileGenerator(model, project);
+		generator.generateAndWrite();
 		
 		return true;
 	}
@@ -62,6 +68,10 @@ public class TransformationWizard extends Wizard implements StringConstants {
 	public void addPages() {
 		page = new TransformationWizardPage(UI_WIZARDPAGE_NAME);
 		addPage(page);
+	}
+
+	public void setModel(IFile model) {
+		this.model = model;
 	}
 
 }
