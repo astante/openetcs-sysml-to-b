@@ -5,6 +5,7 @@ public interface StringConstants {
 	public final String UI_WIZARDPAGE_DESCRIPTION = "Create a new Classical B Model";
 	public final String UI_WIZARDPAGE_PROJECTNAME = "New Classical B Project:";
 	public final String UI_WIZARDPAGE_SYSMLMODEL = "SysML Model:";
+	public final String UI_WIZARDPAGE_EMSG_NAME = "Please give a name for the Classical B Project";
 	
 	public final String UI_MESSAGE_TITLE = "Project creation";
 	public final String UI_MESSAGE_PROJECT_EXISTS = "A Project with the same name already exists. Do you want to override it?";

@@ -75,6 +75,7 @@ public class TransformationWizard extends Wizard implements StringConstants {
 	@Override
 	public void addPages() {
 		page = new TransformationWizardPage(UI_WIZARDPAGE_NAME);
+		page.setModelName(model.getFullPath().toOSString());
 		addPage(page);
 	}
 

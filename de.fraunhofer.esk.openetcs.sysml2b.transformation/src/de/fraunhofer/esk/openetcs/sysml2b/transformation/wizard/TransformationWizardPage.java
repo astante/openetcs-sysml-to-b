@@ -13,14 +13,16 @@ import org.eclipse.ui.PlatformUI;
 
 public class TransformationWizardPage extends WizardPage implements StringConstants {
 
-	private Text modelText;
-	private Text projectName;
+	private Text modelNameWidget;
+	private Text projectNameWidget;
+	private String modelName = "";
 	
 	protected TransformationWizardPage(String pageName) {
 		super(pageName);
 		setTitle(pageName);
 		setPageComplete(false);
 		setDescription(UI_WIZARDPAGE_DESCRIPTION);
+		setErrorMessage(UI_WIZARDPAGE_EMSG_NAME);
 	}
 
 	@Override
@@ -34,21 +36,27 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 		GridLayout gl = new GridLayout(2, false);
 		composite.setLayout(gl);
 		
+		// Model
 		new Label(composite, SWT.NONE).setText(UI_WIZARDPAGE_SYSMLMODEL);
-		modelText = new Text(composite, SWT.BOLD | SWT.BORDER);
+		modelNameWidget = new Text(composite, SWT.BOLD | SWT.BORDER);
+		modelNameWidget.setText(modelName);
+
 		GridData gridData = new GridData(GridData.FILL, GridData.CENTER, true, false);
-		//gridData.horizontalSpan = 2;
-		modelText.setLayoutData(gridData);
+		modelNameWidget.setLayoutData(gridData);
 		
+
+		// Project
 		new Label(composite, SWT.NONE).setText(UI_WIZARDPAGE_PROJECTNAME);
-		projectName = new Text(composite, SWT.BOLD | SWT.BORDER);
-		projectName.setLayoutData(gridData);
-		projectName.addListener(SWT.CHANGED, new Listener() {
+		projectNameWidget = new Text(composite, SWT.BOLD | SWT.BORDER);
+		projectNameWidget.setLayoutData(gridData);
+		projectNameWidget.addListener(SWT.CHANGED, new Listener() {
 			public void handleEvent(Event e) {
-				if (!projectName.getText().equals("")) {
+				if (!projectNameWidget.getText().equals("")) {
 					setPageComplete(true);
+					setErrorMessage(null);
 				} else {
 					setPageComplete(false);
+					setErrorMessage(UI_WIZARDPAGE_EMSG_NAME);
 				}
 			}
 		});
@@ -57,14 +65,14 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 	}
 	
 	public String getProjectName() {
-		return projectName.getText();
+		return projectNameWidget.getText();
 	}
 	
 	public void setModelName(String model) {
-		modelText.setText(model);
+		modelName = model;
 	}
 	
 	public String getModelName() {
-		return modelText.getText();
+		return modelNameWidget.getText();
 	}
 }
