@@ -7,7 +7,7 @@ import org.eclipse.ui.IWorkbench;
 import org.eclipse.ui.internal.dialogs.NewWizard;
 
 
-public class TransformationWizard extends Wizard {
+public class TransformationWizard extends Wizard implements StringConstants {
 
 	private TransformationWizardPage page;
 	
@@ -19,8 +19,8 @@ public class TransformationWizard extends Wizard {
 
 	@Override
 	public void addPages() {
-		page = new TransformationWizardPage("Foobar");
-		addPage(page);		
+		page = new TransformationWizardPage(UI_WIZARDPAGE_NAME);
+		addPage(page);
 	}
 
 }

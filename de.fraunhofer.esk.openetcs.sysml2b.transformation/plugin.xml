@@ -15,7 +15,7 @@
             </separator>
          </menu>
          <action
-               class="de.fraunhofer.esk.openetcs.sysml2b.popup.actions.GenerateAction"
+               class="de.fraunhofer.esk.openetcs.sysml2b.transformation.StartTransformation"
                enablesFor="1"
                id="de.fraunhofer.esk.openetcs.sysml2b.generate"
                label="Generate Classical B Model"
