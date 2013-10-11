@@ -58,7 +58,12 @@ public class TransformationWizard extends Wizard implements StringConstants {
 		
 		// Generate the Classical B source
 		FileGenerator generator= new FileGenerator(model, project);
-		generator.generateAndWrite();
+		try {
+			generator.generateAndWrite();
+		} catch (Exception e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
 		
 		try {
 			project.open(monitor);

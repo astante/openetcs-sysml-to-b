@@ -24,6 +24,8 @@ import org.eclipse.uml2.uml.Stereotype;
 
 
 
+
+
 // import org.eclipse.uml2.uml.util.UMLUtil;
 import de.fraunhofer.esk.openetcs.sysml2b.transformation.StructureMapping;
 
@@ -43,7 +45,7 @@ public class FileGenerator {
 	}
 
 
-	public void generateAndWrite() {
+	public void generateAndWrite() throws Exception {
 		HashMap<Element, Comment> mapping = new HashMap<Element, Comment>();
 		
 		// Build a mapping of <Element> to <Comment> to find the associated
@@ -58,11 +60,18 @@ public class FileGenerator {
 			}
 		}
 
+
 		for (Element element: sysmlModel.allOwnedElements()) {
 			Stereotype stereotype;
 
-			if ((stereotype = element.getAppliedStereotype("SysML::Blocks::Block")) != null) {
-				createMachineFile((Block) element.getStereotypeApplication(stereotype), mapping.get(element));
+			try {
+				if ((stereotype = element.getAppliedStereotype("SysML::Blocks::Block")) != null) {
+					createMachineFile((Block) element.getStereotypeApplication(stereotype), mapping.get(element));
+				}
+			} catch (Exception e)
+			{
+				e.printStackTrace();
+				throw new Exception("Error transforming: " + ((NamedElement) element).getName());
 			}
 		}
 	}

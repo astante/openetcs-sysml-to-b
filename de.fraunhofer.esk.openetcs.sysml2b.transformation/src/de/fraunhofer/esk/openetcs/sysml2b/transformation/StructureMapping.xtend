@@ -49,7 +49,9 @@ class StructureMapping {
 	
 	INITIALIZATION
 		«FOR variable : block.base_Class.getValues»
+		«IF variable.defaultValue instanceof InstanceValue»
 		«variable.name» := «(variable.defaultValue as InstanceValue).instance.name»
+		«ENDIF»
 		«ENDFOR»
 	«ENDIF»
 	«IF block.hasOperations»
