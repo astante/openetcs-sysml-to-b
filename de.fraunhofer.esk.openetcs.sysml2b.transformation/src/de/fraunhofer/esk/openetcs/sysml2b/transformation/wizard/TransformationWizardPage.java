@@ -4,6 +4,7 @@ import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
+import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Event;
 import org.eclipse.swt.widgets.Label;
@@ -15,6 +16,7 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 
 	private Text modelNameWidget;
 	private Text projectNameWidget;
+	private Button doCheckModel;
 	private String modelName = "";
 	
 	protected TransformationWizardPage(String pageName) {
@@ -30,7 +32,7 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 		PlatformUI.getWorkbench().getHelpSystem().setHelp(parent, "de.fraunhofer.esk.ernest.core.cdt.help_general");
 		
 		// Create composite for widgets
-		Composite composite = new Composite(parent, SWT.NULL);
+		Composite composite = new Composite(parent, SWT.NONE);
 		
 		// Create layout for wizard page
 		GridLayout gl = new GridLayout(2, false);
@@ -61,6 +63,15 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 			}
 		});
 
+		// Check model
+		GridData spanData = new GridData(GridData.FILL, GridData.END, true, false);
+		spanData.horizontalSpan = 2;
+		// spanData.grabExcessVerticalSpace = true;
+		doCheckModel = new Button(composite, SWT.CHECK);
+		doCheckModel.setText(UI_WIZARDPAGE_CHECK_MODEL);
+		doCheckModel.setLayoutData(spanData);
+		
+		
 		setControl(composite);
 	}
 	
