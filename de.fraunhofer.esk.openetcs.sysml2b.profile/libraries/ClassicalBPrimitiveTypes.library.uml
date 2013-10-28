@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_mvp9ED-zEeOjI7ENf6z0gg" name="ClassicalBPrimitiveTypes">
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_ycewkD-zEeOjI7ENf6z0gg" name="NAT"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_wWLycD-zEeOjI7ENf6z0gg" name="BOOL"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_B0FzwD-0EeOjI7ENf6z0gg" name="STRING"/>
+  <packagedElement xmi:type="uml:PrimitiveType" xmi:id="_AUBn0D-3EeOjI7ENf6z0gg" name="INT"/>
+</uml:Model>

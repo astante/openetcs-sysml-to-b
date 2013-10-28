@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Profile xmi:version="20110701" xmlns:xmi="http://www.omg.org/spec/XMI/20110701" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/4.0.0/UML" xmi:id="_IA5lMD-9EeOjI7ENf6z0gg" name="ClassicalBProfile" metaclassReference="_nEeK8D-9EeOjI7ENf6z0gg">
+  <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3OVKcD-9EeOjI7ENf6z0gg" source="http://www.eclipse.org/uml2/2.0.0/UML">
+    <contents xmi:type="ecore:EPackage" xmi:id="_XtGtcT-_EeOjI7ENf6z0gg" name="ClassicalBProfile" nsURI="http:///schemas/ClassicalBProfile/_XtGtcD-_EeOjI7ENf6z0gg/1" nsPrefix="ClassicalBProfile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XtHUgT-_EeOjI7ENf6z0gg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XtHUgj-_EeOjI7ENf6z0gg" key="Version" value="0.0.2"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XtHUgz-_EeOjI7ENf6z0gg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XtHUhD-_EeOjI7ENf6z0gg" key="Copyright" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XtHUhT-_EeOjI7ENf6z0gg" key="Date" value="2013-10-28"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_XtHUhj-_EeOjI7ENf6z0gg" key="Author" value=""/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_XtGtcj-_EeOjI7ENf6z0gg" name="SoftwareGeneration">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_XtGtcz-_EeOjI7ENf6z0gg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_fri1kD-9EeOjI7ENf6z0gg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_XtGtdD-_EeOjI7ENf6z0gg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+    <contents xmi:type="ecore:EPackage" xmi:id="_3OVKcT-9EeOjI7ENf6z0gg" name="profile" nsURI="http:///schemas/profile/_3OTVQD-9EeOjI7ENf6z0gg/0" nsPrefix="profile">
+      <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3OWYkT-9EeOjI7ENf6z0gg" source="PapyrusVersion">
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3OWYkj-9EeOjI7ENf6z0gg" key="Version" value="0.0.1"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3OWYkz-9EeOjI7ENf6z0gg" key="Comment" value=""/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3OWYlD-9EeOjI7ENf6z0gg" key="Copyright" value="Fraunhofer Institute for Embedded Systems and Communication Technologies ESK"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3OWYlT-9EeOjI7ENf6z0gg" key="Date" value="2013-10-28"/>
+        <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_3OWYlj-9EeOjI7ENf6z0gg" key="Author" value="Alexander Stante"/>
+      </eAnnotations>
+      <eClassifiers xmi:type="ecore:EClass" xmi:id="_3OVKcj-9EeOjI7ENf6z0gg" name="Software">
+        <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_3OVKcz-9EeOjI7ENf6z0gg" source="http://www.eclipse.org/uml2/2.0.0/UML" references="_fri1kD-9EeOjI7ENf6z0gg"/>
+        <eStructuralFeatures xmi:type="ecore:EReference" xmi:id="_3OVKdD-9EeOjI7ENf6z0gg" name="base_Class" ordered="false" lowerBound="1">
+          <eType xmi:type="ecore:EClass" href="http://www.eclipse.org/uml2/4.0.0/UML#//Class"/>
+        </eStructuralFeatures>
+      </eClassifiers>
+    </contents>
+  </eAnnotations>
+  <elementImport xmi:type="uml:ElementImport" xmi:id="_nEeK8D-9EeOjI7ENf6z0gg" alias="Class">
+    <importedElement xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+  </elementImport>
+  <packagedElement xmi:type="uml:Stereotype" xmi:id="_fri1kD-9EeOjI7ENf6z0gg" name="SoftwareGeneration">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_uwDWkD-9EeOjI7ENf6z0gg" name="base_Class" association="_uwD9oD-9EeOjI7ENf6z0gg">
+      <type xmi:type="uml:Class" href="pathmap://UML_METAMODELS/UML.metamodel.uml#Class"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Extension" xmi:id="_uwD9oD-9EeOjI7ENf6z0gg" name="E_SoftwareGeneration_Class1" memberEnd="_uwD9oT-9EeOjI7ENf6z0gg _uwDWkD-9EeOjI7ENf6z0gg">
+    <ownedEnd xmi:type="uml:ExtensionEnd" xmi:id="_uwD9oT-9EeOjI7ENf6z0gg" name="extension_SoftwareGeneration" type="_fri1kD-9EeOjI7ENf6z0gg" aggregation="composite" association="_uwD9oD-9EeOjI7ENf6z0gg"/>
+  </packagedElement>
+</uml:Profile>

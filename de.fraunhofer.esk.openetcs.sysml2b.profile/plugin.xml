@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://B_LIBRARIES/"
+            target="platform:/plugin/de.fraunhofer.esk.openetcs.sysml2b.profile/libraries/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.emf.ecore.uri_mapping">
+      <mapping
+            source="pathmap://B_PROFILES/"
+            target="platform:/plugin/de.fraunhofer.esk.openetcs.sysml2b.profile/model/">
+      </mapping>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLLibrary">
+      <library
+            description="Classical B primitive types Library"
+            name="ClassicalBPrimitiveTypes"
+            path="pathmap://B_LIBRARIES/ClassicalBPrimitiveTypes.library.uml"
+            provider="Fraunhofer ESK">
+      </library>
+   </extension>
+   <extension
+         point="org.eclipse.papyrus.uml.extensionpoints.UMLProfile">
+      <profile
+            description="UML Profile for Classical B"
+            name="Classical B"
+            path="pathmap://B_PROFILES/ClassicalB.profile.uml"
+            provider="Fraunhofer ESK">
+      </profile>
+   </extension>
+
+</plugin>
