@@ -1,6 +1,7 @@
 package de.fraunhofer.esk.openetcs.sysml2b.common;
 
 import org.eclipse.core.resources.IFile;
+import org.eclipse.core.resources.IResource;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -9,7 +10,9 @@ import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.validation.model.EvaluationMode;
 import org.eclipse.emf.validation.service.IBatchValidator;
 import org.eclipse.emf.validation.service.ModelValidationService;
+import org.eclipse.papyrus.infra.onefile.model.IPapyrusFile;
 import org.eclipse.uml2.uml.Model;
+
 import de.fraunhofer.esk.openetcs.sysml2b.constraints.ClassicalBClientSelector;
 
 public class ClassicalBUtils {
@@ -20,6 +23,10 @@ public class ClassicalBUtils {
 		Model model = (Model) resource.getContents().get(0);
 		
 		return model;
+	}
+	
+	public static Model openPapyrusFile(IPapyrusFile file) {
+		return openUMLModel(getUMLFile(file));
 	}
 	
 	public static IStatus validateModel(Model model) {
@@ -34,6 +41,18 @@ public class ClassicalBUtils {
 		ClassicalBClientSelector.running = false;
 		
 		return status;
+	}
+	
+	public static IFile getUMLFile(IPapyrusFile file) {
+		IResource[] ressources = file.getAssociatedResources();
+		
+		for (IResource res : ressources) {
+			if (res.getFileExtension().equals("uml")) {
+				return (IFile) res;
+			}
+		}
+		
+		return null;
 	}
 	
 	public static boolean isSysMLModel(Model model) {
