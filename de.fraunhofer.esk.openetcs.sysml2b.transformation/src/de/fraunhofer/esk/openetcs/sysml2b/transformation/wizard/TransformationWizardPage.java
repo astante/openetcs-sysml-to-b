@@ -16,7 +16,7 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 
 	private Text modelNameWidget;
 	private Text projectNameWidget;
-	private Button doCheckModel;
+	private Button checkModel;
 	private String modelName = "";
 	
 	protected TransformationWizardPage(String pageName) {
@@ -67,9 +67,10 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 		GridData spanData = new GridData(GridData.FILL, GridData.END, true, false);
 		spanData.horizontalSpan = 2;
 		// spanData.grabExcessVerticalSpace = true;
-		doCheckModel = new Button(composite, SWT.CHECK);
-		doCheckModel.setText(UI_WIZARDPAGE_CHECK_MODEL);
-		doCheckModel.setLayoutData(spanData);
+		checkModel = new Button(composite, SWT.CHECK);
+		checkModel.setText(UI_WIZARDPAGE_CHECK_MODEL);
+		checkModel.setLayoutData(spanData);
+		checkModel.setSelection(true);
 		
 		
 		setControl(composite);
@@ -85,5 +86,9 @@ public class TransformationWizardPage extends WizardPage implements StringConsta
 	
 	public String getModelName() {
 		return modelNameWidget.getText();
+	}
+	
+	public boolean performModelCheck() {
+		return checkModel.getSelection();
 	}
 }
