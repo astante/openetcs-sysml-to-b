@@ -40,7 +40,7 @@ public class TransformationWizard extends Wizard implements StringConstants {
 						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
 						UI_MESSAGE_TITLE,
 						null,
-						"The SysML model contains some errors. Do you really want to generate the Classical B Model?",
+						UI_MESSAGE_ERRORS_IN_MODEL,
 						MessageDialog.QUESTION, new String[] {IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL},
 						0
 						);
