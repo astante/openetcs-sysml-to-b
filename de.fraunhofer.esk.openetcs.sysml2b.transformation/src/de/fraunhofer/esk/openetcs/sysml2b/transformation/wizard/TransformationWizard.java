@@ -11,6 +11,7 @@ import org.eclipse.core.runtime.NullProgressMonitor;
 import org.eclipse.jface.dialogs.IDialogConstants;
 import org.eclipse.jface.dialogs.MessageDialog;
 import org.eclipse.jface.wizard.Wizard;
+import org.eclipse.swt.widgets.Shell;
 import org.eclipse.ui.PlatformUI;
 import org.eclipse.uml2.uml.Model;
 
@@ -22,57 +23,42 @@ public class TransformationWizard extends Wizard implements StringConstants {
 
 	private TransformationWizardPage page;
 	private IFile model_file;
-	
+	private Shell shell;
+
 	@Override
 	public boolean performFinish() {
 		IWorkspaceRoot root = ResourcesPlugin.getWorkspace().getRoot();
 		IProject project = root.getProject(page.getProjectName());
 		IProgressMonitor monitor = new NullProgressMonitor();
-		
+		shell = PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell();
+
 		// Perform model check
 		Model model = ClassicalBUtils.openUMLModel(model_file);
-		
+
 		if (page.performModelCheck()) {
 			IStatus status = ClassicalBUtils.validateModel(model);
-			
+
 			if (!status.isOK()) {
-				final MessageDialog dg = new MessageDialog(
-						PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
-						UI_MESSAGE_TITLE,
-						null,
-						UI_MESSAGE_ERRORS_IN_MODEL,
-						MessageDialog.QUESTION, new String[] {IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL},
-						0
-						);
-				
-				if (dg.open() == 1)
+				if (MessageDialog.openConfirm(shell, UI_MESSAGE_TITLE, UI_MESSAGE_ERRORS_IN_MODEL) == false) {
 					return false;
+				}
 			}
 		}		
-		
-		// Display Message Dialog of project path already exists and create project if not existing
-		if(project.exists())	{
-			final MessageDialog dg = new MessageDialog(
-					PlatformUI.getWorkbench().getActiveWorkbenchWindow().getShell(),
-					UI_MESSAGE_TITLE,
-					null,
-					UI_MESSAGE_PROJECT_EXISTS,
-					MessageDialog.QUESTION, new String[] {IDialogConstants.YES_LABEL, IDialogConstants.NO_LABEL},
-					0
-					);
 
-			// If no, return false
-			if(dg.open() == 1)
+		// Display Message Dialog of project path already exists and create project if not existing
+		if(project.exists()) {
+			if (MessageDialog.openConfirm(shell, UI_MESSAGE_TITLE, UI_MESSAGE_PROJECT_EXISTS) == false) {
 				return false;
-		} else {
-			try {
-				project.create(monitor);
-			} catch (CoreException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
 			}
 		}
 		
+		// Create project
+		try {
+			project.create(monitor);
+		} catch (CoreException e) {
+			e.printStackTrace();
+		}
+
 		// Generate the Classical B source
 		FileGenerator generator= new FileGenerator(model, project);
 		try {
@@ -81,16 +67,16 @@ public class TransformationWizard extends Wizard implements StringConstants {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+
 		try {
 			project.open(monitor);
 		} catch (CoreException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
+
 		monitor.done();		
-		
+
 		return true;
 	}
 
