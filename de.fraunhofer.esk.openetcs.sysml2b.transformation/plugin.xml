@@ -2,27 +2,26 @@
 <?eclipse version="3.4"?>
 <plugin>
    <extension
-         point="org.eclipse.ui.popupMenus">
-      <objectContribution
-            id="de.fraunhofer.esk.openetcs.sysml2b.contribution1"
-            objectClass="org.eclipse.core.resources.IFile">
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="popup:org.eclipse.ui.popup.any">
          <menu
-               id="de.fraunhofer.esk.openetcs.sysml2b.menu1"
-               label="openETCS"
-               path="additions">
-            <separator
-                  name="group1">
-            </separator>
+               label="openETCS">
+            <command
+                  commandId="de.fraunhofer.esk.openetcs.sysml2b.transformation.executeTransformation"
+                  label="Generate Classical B Model"
+                  style="push">
+            </command>
          </menu>
-         <action
-               class="de.fraunhofer.esk.openetcs.sysml2b.transformation.StartTransformation"
-               enablesFor="1"
-               id="de.fraunhofer.esk.openetcs.sysml2b.generate"
-               label="Generate Classical B Model"
-               menubarPath="de.fraunhofer.esk.openetcs.sysml2b.menu1/group1"
-               style="push">
-         </action>
-      </objectContribution>
+      </menuContribution>
+   </extension>
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="de.fraunhofer.esk.openetcs.sysml2b.transformation.PerformTransformationHandler"
+            commandId="de.fraunhofer.esk.openetcs.sysml2b.transformation.executeTransformation">
+      </handler>
    </extension>
 
 </plugin>

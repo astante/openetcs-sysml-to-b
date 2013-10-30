@@ -14,7 +14,11 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.resources,
  org.eclipse.emf.validation,
  de.fraunhofer.esk.openetcs.sysml2b.constraints;bundle-version="1.0.0",
- de.fraunhofer.esk.openetcs.sysml2b.common
+ de.fraunhofer.esk.openetcs.sysml2b.common,
+ org.eclipse.jface,
+ org.eclipse.ui.workbench,
+ org.eclipse.swt,
+ org.eclipse.papyrus.infra.onefile;bundle-version="0.10.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
