@@ -30,4 +30,18 @@
          version="0.0.0"
          unpack="false"/>
 
+   <plugin
+         id="de.fraunhofer.esk.openetcs.sysml2b.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="de.fraunhofer.esk.openetcs.sysml2b.profile"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
 </feature>
