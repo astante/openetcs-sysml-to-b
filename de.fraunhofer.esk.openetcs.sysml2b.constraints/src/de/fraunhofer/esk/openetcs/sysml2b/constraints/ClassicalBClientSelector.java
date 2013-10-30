@@ -9,7 +9,6 @@ public class ClassicalBClientSelector implements IClientSelector {
 	@Override
 	public boolean selects(Object object) {
 		// TODO Auto-generated method stub
-		System.out.println("Select called");
 		return running;
 	}
 

@@ -104,7 +104,7 @@
             default="false"
             id="de.fraunhofer.esk.openetcs.sysml2b.transformation.context">
          <selector
-               class="ValidationDelegateClientSelector">
+               class="de.fraunhofer.esk.openetcs.sysml2b.constraints.ClassicalBClientSelector">
          </selector>
       </clientContext>
    </extension>
