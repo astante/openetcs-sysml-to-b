@@ -27,6 +27,7 @@ public class NameIsUnique extends AbstractModelConstraint {
 			ctx.putCurrentConstraintData(new HashMap<String, EObject>());
 		}
 		
+		@SuppressWarnings("unchecked")
 		HashMap<String, EObject> name_map = (HashMap<String, EObject>) ctx.getCurrentConstraintData();
 		
 		if (name_map.containsKey(uml_class.getName())) {

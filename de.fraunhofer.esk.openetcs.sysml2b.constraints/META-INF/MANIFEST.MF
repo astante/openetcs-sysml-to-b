@@ -6,7 +6,9 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.fraunhofer.esk.openetcs.sysml2b.constraints.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.validation;bundle-version="1.4.0"
+ org.eclipse.emf.validation;bundle-version="1.7.0",
+ org.eclipse.uml2.uml;bundle-version="4.1.1"
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Import-Package: org.eclipse.uml2.uml
+Bundle-Vendor: Fraunhofer ESK
+Export-Package: de.fraunhofer.esk.openetcs.sysml2b.constraints

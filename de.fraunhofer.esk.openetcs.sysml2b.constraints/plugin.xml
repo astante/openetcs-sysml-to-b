@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?eclipse version="3.4"?>
 <plugin>
    <extension
          point="org.eclipse.emf.validation.constraintProviders">
       <category
-            id="de.fraunhofer.esk.openetcs.sysml2b.constraints.SysMLToB"
+            id="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
+            mandatory="false"
             name="SysML to B Transformation Constraints">
       </category>
       <constraintProvider
+            cache="true"
             mode="Batch">
+         <description>
+            Constraint Provider description.
+         </description>
          <package
                namespaceUri="http://www.eclipse.org/uml2/4.0.0/UML">
          </package>
          <constraints
-               categories="de.fraunhofer.esk.openetcs.sysml2b.constraints.SysMLToB">
+               categories="de.fraunhofer.esk.openetcs.sysml2b.constraints.category">
             <constraint
                   class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
                   id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
@@ -22,7 +26,7 @@
                   mode="Batch"
                   name="UML NamedElements do not use reserved Classical B keywords."
                   severity="ERROR"
-                  statusCode="1">
+                  statusCode="101">
                <message>
                   {0}
                </message>
@@ -30,7 +34,7 @@
                   description body text
                </description>
                <target
-                     class="NamedElement">
+                     class="uml.NamedElement">
                </target>
             </constraint>
             <constraint
@@ -40,13 +44,13 @@
                   lang="Java"
                   mode="Batch"
                   name="SysML Block names have to be unique"
-                  severity="ERROR"
-                  statusCode="1">
+                  severity="WARNING"
+                  statusCode="102">
                <message>
                   {0}
                </message>
                <target
-                     class="Class">
+                     class="uml.Class">
                </target>
             </constraint>
             <constraint
@@ -57,12 +61,12 @@
                   mode="Batch"
                   name="Names must be valid Classical B identifier"
                   severity="ERROR"
-                  statusCode="1">
+                  statusCode="103">
                <message>
                   {0}
                </message>
                <target
-                     class="NamedElement">
+                     class="uml.NamedElement">
                </target>
             </constraint>
             <constraint
@@ -73,7 +77,7 @@
                   mode="Batch"
                   name="All UML Operation parameters have associated types."
                   severity="ERROR"
-                  statusCode="1">
+                  statusCode="104">
                <message>
                   {0}
                </message>
@@ -81,10 +85,28 @@
                   All parameter of operation needs a type.
                </description>
                <target
-                     class="Parameter">
+                     class="uml.Parameter">
                </target>
             </constraint></constraints>
       </constraintProvider>
+   </extension>
+   <extension
+         point="org.eclipse.emf.validation.constraintBindings">
+      <binding
+            category="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
+            context="org.eclipse.papyrus.uml.diagram.activityDefaultCtx">
+      </binding>
+      <binding
+            category="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
+            context="de.fraunhofer.esk.openetcs.sysml2b.transformation.context">
+      </binding>
+      <clientContext
+            default="false"
+            id="de.fraunhofer.esk.openetcs.sysml2b.transformation.context">
+         <selector
+               class="ValidationDelegateClientSelector">
+         </selector>
+      </clientContext>
    </extension>
 
 </plugin>
