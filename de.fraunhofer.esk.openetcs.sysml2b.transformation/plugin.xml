@@ -21,6 +21,23 @@
       <handler
             class="de.fraunhofer.esk.openetcs.sysml2b.transformation.PerformTransformationHandler"
             commandId="de.fraunhofer.esk.openetcs.sysml2b.transformation.executeTransformation">
+         <activeWhen>
+            <with
+                  variable="selection">
+               <iterate
+                     ifEmpty="false"
+                     operator="or">
+                  <or>
+                     <instanceof
+                           value="org.eclipse.core.resources.IFile">
+                     </instanceof>
+                     <instanceof
+                           value="org.eclipse.papyrus.infra.onefile.model.IPapyrusFile">
+                     </instanceof>
+                  </or>
+               </iterate>
+            </with>
+         </activeWhen>
       </handler>
    </extension>
 
