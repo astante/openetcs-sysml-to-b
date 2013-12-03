@@ -10,6 +10,7 @@ import org.eclipse.uml2.uml.Parameter
 import org.eclipse.uml2.uml.ParameterDirectionKind
 import org.eclipse.uml2.uml.InstanceValue
 import org.eclipse.uml2.uml.Comment
+import org.eclipse.uml2.uml.Property
 
 class StructureMapping {
 	def createMachine(Block block, Comment comment)'''
@@ -33,11 +34,7 @@ class StructureMapping {
 		«variable.name»
 		«ENDFOR»
 	«ENDIF»
-	«IF block.hasImports»
-	
-	IMPORTS
-		«FOR part : block.base_Class.getParts SEPARATOR ', '»«part.name».«part.type.name»«ENDFOR»
-	«ENDIF»	
+	«block.createImports»
 	«IF block.hasInvariant»
 	
 	INVARIANT
@@ -79,6 +76,30 @@ class StructureMapping {
 	END
 	'''
 	
+	def String createImports(Block block)'''
+	«IF block.hasImports»
+	
+	IMPORTS
+		«FOR part : block.getSysMLBlocks SEPARATOR ', '»«part.name».«part.type.name»«ENDFOR»
+	«ENDIF»
+	'''
+	
+	def EList<org.eclipse.uml2.uml.Property> getSysMLBlocks(Block block) {
+		val newList = new BasicEList<org.eclipse.uml2.uml.Property>
+		
+		for (p : block.base_Class.parts) {
+			if (p.isSysMLBlock) {
+				newList.add(p)
+			}
+		}
+		
+		return newList
+	}
+	
+	def boolean getIsSysMLBlock(Property property) {
+		property.getAppliedStereotype("SysML::Blocks::Block") != null
+	}
+
 	def boolean hasParameter(Operation operation) {
 		return !operation.ownedParameters.empty;
 	}
@@ -130,7 +151,7 @@ class StructureMapping {
 	
 	def boolean hasImports(Block block)
 	{
-		return !block.base_Class.getParts.empty;
+		return !block.sysMLBlocks.empty;
 	}
 	
 	def boolean hasVariables(Block block)
