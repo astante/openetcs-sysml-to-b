@@ -27,19 +27,10 @@ class StructureMapping {
 	«ENDIF»
 	MACHINE
 		«block.base_Class.name»
-	«IF block.hasVariables»
-	
-	VARIABLES
-		«FOR variable : block.base_Class.getValues»
-		«variable.name»
-		«ENDFOR»
-	«ENDIF»
+	«block.createVariables»
 	«block.createImports»
-	«IF block.hasInvariant»
-	
-	INVARIANT
-		«FOR variable : block.base_Class.getValues SEPARATOR ' &\n'»«variable.name» : «variable.type.name»«ENDFOR»
-	«ENDIF»
+	«block.createInvariants»
+
 	«IF block.hasInitialization»
 	
 	INITIALIZATION
@@ -74,6 +65,22 @@ class StructureMapping {
 	
 	«ENDIF»
 	END
+	'''
+	
+	def String createInvariants(Block block)'''
+	«IF block.hasInvariant»
+	
+	INVARIANT
+		«FOR variable : block.base_Class.getValues SEPARATOR ' &\n'»«variable.name» : «variable.type.name»«ENDFOR»
+	«ENDIF»
+	'''
+	
+	def String createVariables(Block block)'''
+	«IF block.hasVariables»
+	
+	VARIABLES
+		«FOR variable : block.base_Class.getValues SEPARATOR ',\n'»«variable.name»«ENDFOR»
+	«ENDIF»
 	'''
 	
 	def String createImports(Block block)'''
