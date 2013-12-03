@@ -41,9 +41,7 @@ class StructureMapping {
 	«IF block.hasInvariant»
 	
 	INVARIANT
-		«FOR variable : block.base_Class.getValues»
-		«variable.name» : «variable.type.name»
-		«ENDFOR»
+		«FOR variable : block.base_Class.getValues SEPARATOR ' &\n'»«variable.name» : «variable.type.name»«ENDFOR»
 	«ENDIF»
 	«IF block.hasInitialization»
 	
