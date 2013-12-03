@@ -30,16 +30,11 @@ class StructureMapping {
 	«block.createVariables»
 	«block.createImports»
 	«block.createInvariants»
-
-	«IF block.hasInitialization»
+	«block.createInitialization»
+	«block.createOperations»
+	'''
 	
-	INITIALIZATION
-		«FOR variable : block.base_Class.getValues»
-		«IF variable.defaultValue instanceof InstanceValue»
-		«variable.name» := «(variable.defaultValue as InstanceValue).instance.name»
-		«ENDIF»
-		«ENDFOR»
-	«ENDIF»
+	def String createOperations(Block block)'''
 	«IF block.hasOperations»
 	
 	OPERATIONS
@@ -65,6 +60,18 @@ class StructureMapping {
 	
 	«ENDIF»
 	END
+	'''
+	
+	def String createInitialization(Block block)'''
+	«IF block.hasInitialization»
+	
+	INITIALIZATION
+		«FOR variable : block.base_Class.getValues»
+		«IF variable.defaultValue instanceof InstanceValue»
+		«variable.name» := «(variable.defaultValue as InstanceValue).instance.name»
+		«ENDIF»
+		«ENDFOR»
+	«ENDIF»
 	'''
 	
 	def String createInvariants(Block block)'''
