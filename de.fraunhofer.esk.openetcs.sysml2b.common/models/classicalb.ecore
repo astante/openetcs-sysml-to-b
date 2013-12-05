@@ -32,6 +32,8 @@
         eType="#//BAssertion" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="initialization" upperBound="-1"
         eType="#//BInitialization" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="operations" upperBound="-1"
+        eType="#//BOperation" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BRefinement" eSuperTypes="#//BModule">
     <eStructuralFeatures xsi:type="ecore:EReference" name="implementation" eType="#//BImplementation"/>

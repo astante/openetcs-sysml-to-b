@@ -23,6 +23,7 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classicalb.ecore#//BAbstractMachine/invariants"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classicalb.ecore#//BAbstractMachine/assertions"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classicalb.ecore#//BAbstractMachine/initialization"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference classicalb.ecore#//BAbstractMachine/operations"/>
     </genClasses>
     <genClasses ecoreClass="classicalb.ecore#//BRefinement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference classicalb.ecore#//BRefinement/implementation"/>
