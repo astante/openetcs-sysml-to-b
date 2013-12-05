@@ -53,14 +53,24 @@
   <eClassifiers xsi:type="ecore:EClass" name="BModule">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="Name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BOperation"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BAbstractVariable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BOperation">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BAbstractVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BInvariant"/>
   <eClassifiers xsi:type="ecore:EClass" name="BConstraint"/>
   <eClassifiers xsi:type="ecore:EClass" name="BSet"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BConcreteConstant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BAbstractConstant"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BProperty"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BConcreteConstant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BAbstractConstant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BConcreteVariable"/>
   <eClassifiers xsi:type="ecore:EClass" name="BAssertion"/>
   <eClassifiers xsi:type="ecore:EClass" name="BInitialization"/>

@@ -39,14 +39,24 @@
     <genClasses ecoreClass="classicalb.ecore#//BModule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BModule/Name"/>
     </genClasses>
-    <genClasses ecoreClass="classicalb.ecore#//BOperation"/>
-    <genClasses ecoreClass="classicalb.ecore#//BAbstractVariable"/>
+    <genClasses ecoreClass="classicalb.ecore#//BOperation">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BOperation/name"/>
+    </genClasses>
+    <genClasses ecoreClass="classicalb.ecore#//BAbstractVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BAbstractVariable/name"/>
+    </genClasses>
     <genClasses ecoreClass="classicalb.ecore#//BInvariant"/>
     <genClasses ecoreClass="classicalb.ecore#//BConstraint"/>
     <genClasses ecoreClass="classicalb.ecore#//BSet"/>
-    <genClasses ecoreClass="classicalb.ecore#//BConcreteConstant"/>
-    <genClasses ecoreClass="classicalb.ecore#//BAbstractConstant"/>
-    <genClasses ecoreClass="classicalb.ecore#//BProperty"/>
+    <genClasses ecoreClass="classicalb.ecore#//BConcreteConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BConcreteConstant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="classicalb.ecore#//BAbstractConstant">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BAbstractConstant/name"/>
+    </genClasses>
+    <genClasses ecoreClass="classicalb.ecore#//BProperty">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute classicalb.ecore#//BProperty/name"/>
+    </genClasses>
     <genClasses ecoreClass="classicalb.ecore#//BConcreteVariable"/>
     <genClasses ecoreClass="classicalb.ecore#//BAssertion"/>
     <genClasses ecoreClass="classicalb.ecore#//BInitialization"/>
