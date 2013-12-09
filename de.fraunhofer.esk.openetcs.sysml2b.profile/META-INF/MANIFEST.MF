@@ -6,7 +6,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.fraunhofer.esk.openetcs.sysml2b.profile.Activator
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.emf.ecore;bundle-version="2.9.1",
- org.eclipse.papyrus.uml.extensionpoints;bundle-version="0.10.1"
+ org.eclipse.emf.ecore,
+ org.eclipse.papyrus.uml.extensionpoints
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy

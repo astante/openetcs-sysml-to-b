@@ -9,16 +9,16 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.xtend.lib,
  com.google.guava,
  org.eclipse.xtext.xbase.lib,
- org.eclipse.uml2.uml;bundle-version="4.0.2",
- org.eclipse.papyrus.sysml;bundle-version="0.9.2",
+ org.eclipse.uml2.uml,
+ org.eclipse.papyrus.sysml,
  org.eclipse.core.resources,
  org.eclipse.emf.validation,
- de.fraunhofer.esk.openetcs.sysml2b.constraints;bundle-version="1.0.0",
+ de.fraunhofer.esk.openetcs.sysml2b.constraints,
  de.fraunhofer.esk.openetcs.sysml2b.common,
  org.eclipse.jface,
  org.eclipse.ui.workbench,
  org.eclipse.swt,
- org.eclipse.papyrus.infra.onefile;bundle-version="0.10.1"
+ org.eclipse.papyrus.infra.onefile
 Bundle-ActivationPolicy: lazy
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 
