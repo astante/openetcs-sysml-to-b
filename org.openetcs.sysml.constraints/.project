@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
-	<name>de.fraunhofer.esk.openetcs.sysml2b.constraints</name>
+	<name>org.openetcs.sysml.constraints</name>
 	<comment></comment>
 	<projects>
 	</projects>

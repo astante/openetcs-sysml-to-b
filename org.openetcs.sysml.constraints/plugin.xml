@@ -3,9 +3,9 @@
    <extension
          point="org.eclipse.emf.validation.constraintProviders">
       <category
-            id="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
+            id="org.openetcs.sysml.constraints.category"
             mandatory="false"
-            name="SysML to B Transformation Constraints">
+            name="OpenETCS SysML Constraints">
       </category>
       <constraintProvider
             cache="true"
@@ -17,10 +17,10 @@
                namespaceUri="http://www.eclipse.org/uml2/4.0.0/UML">
          </package>
          <constraints
-               categories="de.fraunhofer.esk.openetcs.sysml2b.constraints.category">
+               categories="org.openetcs.sysml.constraints.category">
             <constraint
-                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
-                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsNoKeyword"
+                  class="org.openetcs.sysml.constraints.NameIsNoKeyword"
+                  id="org.sysml.constraints.NameIsNoKeyword"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -38,8 +38,8 @@
                </target>
             </constraint>
             <constraint
-                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsUnique"
-                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsUnique"
+                  class="org.openetcs.sysml.constraints.NameIsUnique"
+                  id="org.openetcs.sysml.constraints.NameIsUnique"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -54,8 +54,8 @@
                </target>
             </constraint>
             <constraint
-                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsValid"
-                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.NameIsValid"
+                  class="org.openetcs.sysml.constraints.NameIsValid"
+                  id="org.openetcs.sysml.constraints.NameIsValid"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -70,8 +70,8 @@
                </target>
             </constraint>
             <constraint
-                  class="de.fraunhofer.esk.openetcs.sysml2b.constraints.ParameterHasType"
-                  id="de.fraunhofer.esk.openetcs.sysml2b.constraints.ParameterHasType"
+                  class="org.openetcs.sysml.constraints.ParameterHasType"
+                  id="org.openetcs.sysml.constraints.ParameterHasType"
                   isEnabledByDefault="true"
                   lang="Java"
                   mode="Batch"
@@ -93,18 +93,18 @@
    <extension
          point="org.eclipse.emf.validation.constraintBindings">
       <binding
-            category="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
+            category="org.openetcs.sysml.constraints.category"
             context="org.eclipse.papyrus.uml.diagram.activityDefaultCtx">
       </binding>
       <binding
-            category="de.fraunhofer.esk.openetcs.sysml2b.constraints.category"
-            context="de.fraunhofer.esk.openetcs.sysml2b.transformation.context">
+            category="org.openetcs.sysml.constraints.category"
+            context="org.openetcs.sysml.constraints.context">
       </binding>
       <clientContext
             default="false"
-            id="de.fraunhofer.esk.openetcs.sysml2b.transformation.context">
+            id="org.openetcs.sysml.constraints.context">
          <selector
-               class="de.fraunhofer.esk.openetcs.sysml2b.constraints.ClassicalBClientSelector">
+               class="org.openetcs.sysml.constraints.ClassicalBClientSelector">
          </selector>
       </clientContext>
    </extension>

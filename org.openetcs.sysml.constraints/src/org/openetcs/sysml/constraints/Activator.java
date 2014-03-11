@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b.constraints;
+package org.openetcs.sysml.constraints;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.osgi.framework.BundleContext;
@@ -9,7 +9,7 @@ import org.osgi.framework.BundleContext;
 public class Activator extends AbstractUIPlugin {
 
 	// The plug-in ID
-	public static final String PLUGIN_ID = "de.fraunhofer.esk.openetcs.sysml2b.constraints"; //$NON-NLS-1$
+	public static final String PLUGIN_ID = "org.openetcs.sysml.constraints"; //$NON-NLS-1$
 
 	// The shared instance
 	private static Activator plugin;

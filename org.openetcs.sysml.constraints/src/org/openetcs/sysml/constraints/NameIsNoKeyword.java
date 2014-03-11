@@ -1,4 +1,4 @@
-package de.fraunhofer.esk.openetcs.sysml2b.constraints;
+package org.openetcs.sysml.constraints;
 
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.emf.validation.AbstractModelConstraint;
