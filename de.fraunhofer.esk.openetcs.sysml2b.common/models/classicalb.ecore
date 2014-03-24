@@ -55,13 +55,22 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BOperation">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="inParameters" upperBound="-1"
+        eType="#//BParameter"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="outParameters" upperBound="-1"
+        eType="#//BParameter"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BAbstractVariable">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BInvariant"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BInvariant">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BConstraint"/>
-  <eClassifiers xsi:type="ecore:EClass" name="BSet"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BSet">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BConcreteConstant">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
@@ -71,7 +80,16 @@
   <eClassifiers xsi:type="ecore:EClass" name="BProperty">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="BConcreteVariable"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BConcreteVariable">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BAssertion"/>
   <eClassifiers xsi:type="ecore:EClass" name="BInitialization"/>
+  <eClassifiers xsi:type="ecore:EClass" name="BParameter">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="type" eType="#//BType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="BType">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
 </ecore:EPackage>

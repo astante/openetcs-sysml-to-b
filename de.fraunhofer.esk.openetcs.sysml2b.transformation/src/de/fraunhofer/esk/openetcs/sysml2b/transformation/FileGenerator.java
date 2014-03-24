@@ -14,13 +14,16 @@ import org.eclipse.uml2.uml.Model;
 import org.eclipse.uml2.uml.NamedElement;
 import org.eclipse.uml2.uml.Stereotype;
 
+import ClassicalB.Project;
 import de.fraunhofer.esk.openetcs.sysml2b.transformation.StructureMapping;
 
 public class FileGenerator {
 	private String pathToBMchs;
 	private Model sysmlModel;
+	private IProject project;
 	
 	public FileGenerator(Model model, IProject project) {
+		this.project = project;
 		pathToBMchs = project.getLocation().toOSString() + "\\";
 		File file = new File(pathToBMchs);
 		
@@ -46,20 +49,11 @@ public class FileGenerator {
 			}
 		}
 
-
-		for (Element element: sysmlModel.allOwnedElements()) {
-			Stereotype stereotype;
-
-			try {
-				if ((stereotype = element.getAppliedStereotype("SysML::Blocks::Block")) != null) {
-					createMachineFile((Block) element.getStereotypeApplication(stereotype), mapping.get(element));
-				}
-			} catch (Exception e)
-			{
-				e.printStackTrace();
-				throw new Exception("Error transforming: " + ((NamedElement) element).getName());
-			}
-		}
+		MapToBModel map2b = new MapToBModel();
+		Project p = map2b.create(sysmlModel);
+		
+		MapToText map2t = new MapToText();
+		map2t.create(p, project);
 	}
 	
 	private void createMachineFile(Block block, Comment comment) {

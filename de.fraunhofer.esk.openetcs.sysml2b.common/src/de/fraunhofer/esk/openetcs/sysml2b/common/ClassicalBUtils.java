@@ -12,8 +12,7 @@ import org.eclipse.emf.validation.service.IBatchValidator;
 import org.eclipse.emf.validation.service.ModelValidationService;
 import org.eclipse.papyrus.infra.onefile.model.IPapyrusFile;
 import org.eclipse.uml2.uml.Model;
-
-import de.fraunhofer.esk.openetcs.sysml2b.constraints.ClassicalBClientSelector;
+import org.openetcs.sysml.constraints.ClassicalBClientSelector;
 
 public class ClassicalBUtils {
 	public static Model openUMLModel(IFile file) {
