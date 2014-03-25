@@ -23,6 +23,7 @@ import ClassicalB.BInvariant
 import ClassicalB.BAbstractMachine
 import org.eclipse.uml2.uml.Parameter
 import org.eclipse.uml2.uml.Type
+import org.eclipse.uml2.uml.Port
 
 class MapToBModel {
 	var ClassicalBFactory BFactory = ClassicalBFactory.eINSTANCE
@@ -98,7 +99,7 @@ class MapToBModel {
 		var list = new BasicEList<Property>
 		
 		for (property : block.base_Class.ownedAttributes) {
-			if (property.aggregation == AggregationKind.COMPOSITE_LITERAL && 
+			if (property.aggregation == AggregationKind.COMPOSITE_LITERAL && !(property instanceof Port) &&
 				property.association == null) {
 				list.add(property)
 			}
@@ -126,9 +127,11 @@ class MapToBModel {
 	def EList<FlowPort> flowPorts(Block block) {
 		var list = new BasicEList<FlowPort>
 		
-		for (attribute : block.base_Class.ownedAttributes) {
-			if (attribute instanceof FlowPort) {
-				list.add(attribute as FlowPort)
+		for (port : block.base_Class.ownedPorts) {
+			var stereotype = port.getAppliedStereotype("SysML::PortAndFlows::FlowPort")
+
+			if (stereotype != null) {
+				list.add(port.getStereotypeApplication(stereotype) as FlowPort)
 			}
 		}
 		
@@ -215,12 +218,20 @@ class MapToBModel {
 	 */
 	def BOperation mapToBOperation(FlowPort port) {
 		var operation = BFactory.createBOperation
+		operation.name = port.name
+		
 		var parameter = mapToBParameter(port)
+		
+		// As the flow port data has no name and we dont want to use the 
+		// port name as argument name
+		parameter.name = "data" 
 
-		if (port.direction == FlowDirection.OUT_VALUE) {
+		if (port.direction.value == FlowDirection.OUT_VALUE) {
 			operation.outParameters.add(parameter)
-		} else if (port.direction == FlowDirection.IN_VALUE) {
+		} else if (port.direction.value == FlowDirection.IN_VALUE) {
 			operation.inParameters.add(parameter)
+		} else {
+			// No support for in/out ports
 		}
 		
 		return operation;
