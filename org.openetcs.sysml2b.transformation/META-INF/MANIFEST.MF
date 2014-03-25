@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Sysml2b
-Bundle-SymbolicName: de.fraunhofer.esk.openetcs.sysml2b.transformation;singleton:=true
+Bundle-SymbolicName: org.openetcs.sysml2b.transformation;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Bundle-Activator: de.fraunhofer.esk.openetcs.sysml2b.transformation.Activator
 Require-Bundle: org.eclipse.ui,
@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.papyrus.sysml,
  org.eclipse.core.resources,
  org.eclipse.emf.validation,
- de.fraunhofer.esk.openetcs.sysml2b.common,
+ org.openetcs.sysml2b.common,
  org.eclipse.jface,
  org.eclipse.ui.workbench,
  org.eclipse.swt,
