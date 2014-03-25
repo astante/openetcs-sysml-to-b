@@ -59,11 +59,12 @@ class MapToText {
 	«IF !machine.concreteVariables.empty»
 	CONCRETE_VARIABLES
 		«FOR v : machine.concreteVariables SEPARATOR ',\n'»«v.name»«ENDFOR»
+	
 	«ENDIF»
 	«IF !machine.operations.empty»
 	OPERATIONS
 		«FOR o : machine.operations»
-		«IF !o.outParameters.empty»«FOR p : o.outParameters SEPARATOR ', '»«p.name»«ENDFOR» <-- «ENDIF»«o.name»«IF !o.inParameters.empty» («FOR p : o.outParameters SEPARATOR ', '»«p.name»«ENDFOR»)«ENDIF» =
+		«IF !o.outParameters.empty»«FOR p : o.outParameters SEPARATOR ', '»«p.name»«ENDFOR» <-- «ENDIF»«o.name»«IF !o.inParameters.empty» («FOR p : o.inParameters SEPARATOR ', '»«p.name»«ENDFOR»)«ENDIF» =
 		«IF !o.outParameters.empty || !o.inParameters.empty»
 		PRE
 			«FOR p : o.allParameters SEPARATOR ' &'»
@@ -72,10 +73,12 @@ class MapToText {
 		THEN
 			skip
 		END;
+
 		«ELSE»
 		BEGIN
 			skip
 		END;
+
 		«ENDIF»
 		«ENDFOR»
 	«ENDIF»
